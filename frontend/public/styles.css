@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Base styles */
+:root {
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --primary-color: #007bff;
+    --border-color: #eaeaea;
+    --text-color: #2c3e50;
+}
+
+/* Apply font family globally */
+body, button, input, table {
+    font-family: var(--font-family);
+}
+
+/* Base font styles */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--text-color);
+}
+
+.main-header h1 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.timeline-header h2 {
+    font-weight: 600;
+    font-size: 1.5em;
+    letter-spacing: -0.3px;
+}
+
+/* Update button text */
+button {
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+/* Timeline items */
+.visual-timeline-label {
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+.visual-timeline-date {
+    font-weight: 400;
+}
+
+/* Table text */
+#dataTable {
+    font-family: var(--font-family);
+}
+
+#dataTable th {
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
+#dataTable td {
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.table-container {
+    order: 2;
+    margin-bottom: 40px;
+}
+
+#dataTable {
+    border: 1px solid var(--border-color);
+    margin-top: 20px;
+}
+
+#dataTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dataTable th, #dataTable td {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+}
+
+.timeline-container {
+    order: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 40px 0;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.visual-timeline {
+    position: relative;
+    height: 350px;
+    background: #f8f9fa;
+    margin: 20px 0;
+    padding: 30px 20px;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.visual-timeline-inner {
+    position: relative;
+    min-width: 100%;
+    width: max-content;
+    height: max-content;
+    min-height: 100%;
+    padding: 20px 10px 40px 10px;
+}
+
+.visual-timeline-item {
+    position: absolute;
+    height: 50px;
+    min-width: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-timeline-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.visual-timeline-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 4px 12px;
+    border-radius: 15px;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.visual-timeline-date {
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 4px;
+}
+
+.timeline-date {
+    color: #666;
+    font-size: 0.9em;
+    margin: 4px 0;
+}
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.right-controls {
+    margin-left: auto;
+}
+
+.delete-column {
+    color: #ff4444;
+    cursor: pointer;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.delete-column:hover {
+    color: #cc0000;
+}
+
+.table-controls button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+.table-controls button:hover {
+    background-color: #0056b3;
+}
+
+#deleteRows {
+    background-color: #dc3545;
+}
+
+#deleteRows:hover {
+    background-color: #c82333;
+}
+
+#exportSelected {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#exportSelected:hover {
+    background-color: #218838;
+}
+
+#exportSelected:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Scrollbar styling */
+.visual-timeline::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.visual-timeline::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.visual-timeline::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.visual-timeline::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+.visual-timeline::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Optional: Add a subtle animation for the transition */
+.timeline-container {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add these styles at the top of your CSS file */
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.main-header h1 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+/* Add styles for dragging effect */
+.dragging {
+    opacity: 0.5; /* Make the dragged row semi-transparent */
+    background-color: #f0f0f0; /* Change background color to indicate dragging */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Optional: Add hover effect for rows */
+table tr:hover {
+    background-color: #e9ecef; /* Light gray background on hover */
+}
+
+/* Optional: Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid var(--border-color); /* Add border to table cells */
+    text-align: left; /* Align text to the left */
+}
+
+/* Optional: Style for the header */
+table th {
+    background-color: var(--primary-color); /* Blue background for header */
+    color: white; /* White text for header */
+}
+
+/* Style for the up and down buttons */
+button {
+    margin: 0 5px; /* Add some space between buttons */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 16px; /* Increase font size for better visibility */
+}
+
+/* Optional: Style for disabled buttons */
+button:disabled {
+    opacity: 0.5; /* Make disabled buttons semi-transparent */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+/* Style for subtitles */
+h3 {
+    margin: 10px 0; /* Add some margin above and below the subtitle */
+    font-weight: 600; /* Make the subtitle bold */
+    color: var(--text-color); /* Set a color for the subtitle */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Update the table container styles */
+.table-container h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.table-controls {
+    margin-bottom: 20px;
+}
+
+/* Fullscreen mode adjustments */
+.timeline-container.fullscreen .visual-timeline-item {
+    height: 100px;  /* Larger height in fullscreen */
+    min-width: 200px;  /* Wider minimum width */
+    padding: 15px;
+    font-size: 1.2em;  /* Larger font */
+}
+
+.timeline-container.fullscreen .visual-timeline-label {
+    font-size: 16px;  /* Larger label text */
+}
+
+.timeline-container.fullscreen .visual-timeline-date {
+    font-size: 14px;  /* Larger date text */
+}
+
+/* Adjust spacing between items in fullscreen */
+.timeline-container.fullscreen .visual-timeline-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    min-width: max-content;
+    min-height: 100%;
+}
+/* Update the JavaScript spacing calculation */

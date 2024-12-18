@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Incident Timeline Manager</h1>
+        </header>
+        
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <h2>Timeline</h2>
+            </div>
+            <div id="visual-timeline" class="visual-timeline"></div>
+        </div>
+        
+        <div class="table-container">
+            <h3>Incidents</h3>
+            <div class="table-controls">
+                <div class="left-controls">
+                    <button id="addRow">Add Row</button>
+                    <button id="addColumn">Add Column</button>
+                    <button id="deleteColumn">Delete Column</button>
+                    <button id="deleteRows">Delete Selected Rows</button>
+                </div>
+                <div class="right-controls">
+                    <button id="exportSelected">Export Selected</button>
+                </div>
+            </div>
+            <div id="dataTable"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html> 

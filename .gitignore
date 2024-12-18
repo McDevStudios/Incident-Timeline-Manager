@@ -1,0 +1,6 @@
+# Node.js (In case of a local npm install command run)
+node_modules/
+
+# Logs (Because no one needs to manage logs through git)
+logs/
+*.log
