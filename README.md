@@ -55,8 +55,8 @@ A lightweight CRUD web app with two main features:
 
 ### Installation
 1. Clone the repository:   ```bash
-   git clone <https://github.com/McDevStudios/Incident-Timeline-Manager.git>
-   cd <Incident-Timeline-Manager>   ```
+   git clone https://github.com/McDevStudios/Incident-Timeline-Manager.git
+   cd Incident-Timeline-Manager   ```
 
 2. Build and start the containers:   ```bash
    docker-compose up --build   ```
