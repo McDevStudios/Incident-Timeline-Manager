@@ -89,4 +89,4 @@ A lightweight CRUD web app with two main features:
 - Data export/import in CSV format.
 
 ## License
-This project is licensed under the MIT License. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
