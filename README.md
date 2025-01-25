@@ -54,14 +54,16 @@ A lightweight CRUD web app with two main features:
 - Docker and Docker Compose installed on your machine.
 
 ### Installation
-1. Clone the repository:   ```bash
+1. Clone the repository:
+   ```bash
    git clone https://github.com/McDevStudios/Incident-Timeline-Manager.git
    cd Incident-Timeline-Manager   ```
 
-2. Build and start the containers:   ```bash
+3. Build and start the containers:
+   ```bash
    docker-compose up --build   ```
 
-3. Access the application:
+5. Access the application:
    - Frontend: `http://localhost:8080`
    - Backend API: `http://localhost:3000`
 
