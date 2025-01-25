@@ -57,11 +57,11 @@ A lightweight CRUD web app with two main features:
 1. Clone the repository:
    ```bash
    git clone https://github.com/McDevStudios/Incident-Timeline-Manager.git
-   cd Incident-Timeline-Manager   ```
+   cd Incident-Timeline-Manager  
 
 3. Build and start the containers:
    ```bash
-   docker-compose up --build   ```
+   docker-compose up --build  
 
 5. Access the application:
    - Frontend: `http://localhost:8080`
